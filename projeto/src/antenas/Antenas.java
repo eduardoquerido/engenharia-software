@@ -53,9 +53,13 @@ public class Antenas {
 	public List<Aluno> getAluno() {
 		return alunos;
 	}
+	
+	public List<Projeto> getProjeto() {
+		return projetos;
+	}
 
 	
-//Add Projeto;	
+//Buscar por chave Projeto;	
 	public Projeto buscarProjetoPorChave(String chave) {
 		for(Projeto projeto:projetos) {
 			if(projeto.getChave().equals(chave)) return projeto;
@@ -100,11 +104,6 @@ public class Antenas {
 		alunos.remove(aluno);
 	}
 	
-//Listar Projetos;
-	public Projeto listarProjeto(Projeto projeto) {
-		for(Projeto projeto:projetos) {
-			return projeto;
-		}
-	}	
-	
+
+
 }

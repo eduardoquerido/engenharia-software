@@ -3,10 +3,11 @@ package antenas;
 public class Projeto {
 
 	private String chave;
-	private Entrega entrega;
+	private Entrega entregas;
+
 	
 	
-	public Projeto(String chave) {
+	public Projeto(String chave, Entrega entrega) {
 		this.chave = chave;
 	}
 
@@ -19,11 +20,16 @@ public class Projeto {
 	}	
 	
 	public Entrega getEntrega() {
-		return entrega;
+		return entregas;
 	}
 	
 	public void setEntrega(Entrega entrega) {
-		this.entrega = entrega;
+		this.entregas = entrega;
 	}	
+
+//Listar Entregas;
+	public Entrega listarEntregas(Entrega ent) {
+		return ent;		
+	}
 
 }
