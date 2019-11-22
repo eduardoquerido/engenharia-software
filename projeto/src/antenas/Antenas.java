@@ -104,6 +104,16 @@ public class Antenas {
 		alunos.remove(aluno);
 	}
 	
+//Setar Chave
+	public void setarChaveProjeto(String titulo, String chave) {
+		for(Projeto projeto:projetos) {
+			if(projeto.getTitulo().equals(titulo)) {
+				projeto.setChave(chave);
+			}
+		}
+	}
+	
+	
 
 
 }

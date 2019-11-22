@@ -28,9 +28,15 @@ class Teste {
 		//Empresario emp = antenas.loginEmpresario(new DadosLogin("empresariobobao@bol.com", "senha"));
 		
 	//Criando Projetos
-		antenas.cadastrarProjeto(new Projeto("chavedobalacubacu", new Entrega("kablau", "www.oi.com", "www.quemsabe.com", new LinkedList<String>())));
-		antenas.cadastrarProjeto(new Projeto("projetozika", new Entrega("blablabla", "www.tchau.com", "www.nemvem.com", new LinkedList<String>())));
-		antenas.cadastrarProjeto(new Projeto("projetao", new Entrega("blublubla", "www.falou.com", "www.issomesmo.com", new LinkedList<String>())));
+		antenas.cadastrarProjeto(new Projeto("chavedobalacubacu", "titulo1", new Entrega("kablau", "www.oi.com", "www.quemsabe.com", new LinkedList<String>())));
+		antenas.cadastrarProjeto(new Projeto("projetozika", "titulo2", new Entrega("blablabla", "www.tchau.com", "www.nemvem.com", new LinkedList<String>())));
+		antenas.cadastrarProjeto(new Projeto("projetao", "titulo3", new Entrega("blublubla", "www.falou.com", "www.issomesmo.com", new LinkedList<String>())));
+		antenas.cadastrarProjeto(new Projeto("", "titulo4", new Entrega("oioioioi", "www.oidnv.com", "www.vocesabia.com", new LinkedList<String>())));
+		
+	//Setando chave
+		antenas.setarChaveProjeto("titulo4", "123");
+		Projeto proj = antenas.buscarProjetoPorChave("123");
+		assertEquals(proj.getChave(), "123");
 		
 	//Busca do Projeto;
 		Projeto projeto = antenas.buscarProjetoPorChave("projetozika");
@@ -43,7 +49,7 @@ class Teste {
 		assertEquals(projeto3.getChave(), "chavedobalacubacu");		
 		
 	//Verificando getProjetos() - atribuído ao CADI
-		assertEquals(antenas.getProjeto().size(), 3);		
+		assertEquals(antenas.getProjeto().size(), 4);		
 		
 	//Criando Entrega;
 		Entrega entrega = new Entrega("blablabla", "www.rep.com", "www.cloud.com", new LinkedList<String>());
@@ -63,9 +69,6 @@ class Teste {
 	//Verificando listarEntregas() - atribuido ao Professor e ao Empresário
 		Entrega ent = entrega;
 		assertEquals(projeto.listarEntregas(ent), entrega);
-		
-	//Verificando getEntrega() da classe Projeto
-		assertEquals(projeto.getEntrega(), entrega);
 		
 
 	}
